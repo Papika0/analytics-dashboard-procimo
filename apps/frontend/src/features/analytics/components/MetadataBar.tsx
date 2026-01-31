@@ -20,12 +20,6 @@ export function MetadataBar({ metadata, isFetching }: MetadataBarProps) {
         <span className="metadata-label">Execution Time</span>
         <span className="metadata-value">{metadata.executionTimeMs}ms</span>
       </div>
-      <div className="metadata-item">
-        <span className="metadata-label">Cache Status</span>
-        <span className={`metadata-value metadata-cache ${metadata.cached ? 'cached' : 'fresh'}`}>
-          {metadata.cached ? 'Cached' : 'Fresh'}
-        </span>
-      </div>
       {isFetching && (
         <div className="metadata-item">
           <span className="metadata-fetching">Refreshing...</span>
