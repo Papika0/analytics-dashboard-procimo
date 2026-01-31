@@ -10,8 +10,6 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@shared/(.*)$': '<rootDir>/src/shared/$1',
-    '^@services/(.*)$': '<rootDir>/src/services/$1',
-    '^@infrastructure/(.*)$': '<rootDir>/src/infrastructure/$1',
     '^@analytics-dashboard/shared-types$': '<rootDir>/../../packages/shared-types/src/index.ts',
   },
   collectCoverageFrom: [

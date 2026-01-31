@@ -10,11 +10,7 @@
     "types": ["node", "jest"],
     "baseUrl": "./src",
     "paths": {
-      "@domain/*": ["domain/*"],
-      "@application/*": ["application/*"],
-      "@infrastructure/*": ["infrastructure/*"],
-      "@shared/*": ["shared/*"],
-      "@services/*": ["services/*"]
+      "@shared/*": ["shared/*"]
     }
   },
   "include": ["src/**/*"],
