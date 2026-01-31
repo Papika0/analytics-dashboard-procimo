@@ -44,12 +44,16 @@ export class InMemoryCache {
 
     if (value !== undefined) {
       this.hits++;
-      console.log(`[Cache] HIT: ${key}`);
+      if (config.nodeEnv === 'development') {
+        console.log(`[Cache] HIT: ${key}`);
+      }
       return value;
     }
 
     this.misses++;
-    console.log(`[Cache] MISS: ${key}`);
+    if (config.nodeEnv === 'development') {
+      console.log(`[Cache] MISS: ${key}`);
+    }
     return null;
   }
 
