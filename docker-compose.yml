@@ -1,0 +1,27 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/backend/src:/app/apps/backend/src
+      - ./packages:/app/packages
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - ALLOWED_ORIGINS=http://localhost:5173
+
+  frontend:
+    build:
+      context: .
+      dockerfile: apps/frontend/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./apps/frontend/src:/app/apps/frontend/src
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_PROXY_TARGET=http://backend:3000
