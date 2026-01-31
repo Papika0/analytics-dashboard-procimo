@@ -1,11 +1,14 @@
 import { QueryProvider } from './providers/QueryProvider';
+import { ErrorBoundary } from '@shared/components/ErrorBoundary';
 import AnalyticsDashboard from '@pages/AnalyticsDashboard';
 
 function App() {
   return (
-    <QueryProvider>
-      <AnalyticsDashboard />
-    </QueryProvider>
+    <ErrorBoundary>
+      <QueryProvider>
+        <AnalyticsDashboard />
+      </QueryProvider>
+    </ErrorBoundary>
   );
 }
 
